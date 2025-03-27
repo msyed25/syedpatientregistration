@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Link to external CSS file for styling -->
+        <link rel="stylesheet" href="style.css">
+        <title>New Patient Registration | Houston Clinic</title>
+    </head>
+    <body>
+        <!-- Header section containing clinic name and logo -->
+        <header>
+            <table width="100%">
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <div class="image">
+                            <!-- Clinic logo -->
+                            <img align="center" src="medlogo.png" alt="Houston Clinic" width="80px" id="logo"/>
+                        </div>
+                    </td>
+                    <td>
+                        <h2>Houston Clinic</h2>
+                    </td>
+                    <td valign="bottom" align="right" width="20%">
+                        <p>Today's Date: <span id="dateDisplay"></span></p>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <hr>
+        
+        <!-- Patient Registration Form -->
+        <form action="thankyou.html">
+            <center>
+                <div class="format">
+                    <table>
+                        <tr>
+                            <th colspan="4">Create Your Account</th>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="fname">Enter Your First Name:</label></td>
+                            <td>
+                                <input type="text" name="fname" id="fname" maxlength="30" required placeholder="E.g., Alex">
+                                <span class="error-message" id="name-error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="lname">Enter Your Last Name:</label></td>
+                            <td>
+                                <input type="text" name="lname" id="lname" maxlength="30" required placeholder="E.g., Johnson">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="email">Enter Your Email:</label></td>
+                            <td>
+                                <input type="email" name="email" id="email" required placeholder="E.g., example@mail.com">
+                                <span class="error-message" id="email-error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="pgender">Gender:</label></td>
+                            <td>
+                                <input type="radio" id="g1" name="pgender" value="Male"> Male
+                                <input type="radio" id="g2" name="pgender" value="Female"> Female
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="dob">Date of Birth:</label></td>
+                            <td>
+                                <input type="date" id="dob" name="dob">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="painRange">Pain Level (1-10):</label></td>
+                            <td>
+                                <input type="range" name="painRange" id="painRange" min="1" max="10" value="0">
+                                <span id="painValue"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="td1"><label for="uid">Create Username:</label></td>
+                            <td>
+                                <input type="text" name="uid" id="uid" maxlength="20" required placeholder="Choose a unique ID">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="pword"><b>Set a Password:</b></label></td>
+                            <td>
+                                <input type="password" name="pword" id="pword" minlength="10" required>
+                                <span class="error-message" id="password-error"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4">
+                                <center>
+                                    <input type="submit" name="submit" value="Register Now">
+                                    <input type="reset" name="reset" value="Clear Form">
+                                </center>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </center>
 
+            <!-- Review Section (Correctly Placed Inside Form) -->
+            <div id="review-section">
+                <button type="button" id="review-btn">Review</button>
+                <div id="review-output"></div>
+            </div>
+
+        </form>
+        
+        <!-- Footer Section -->
+        <footer>
+            <p>&#169; Houston Clinic | Need help? <a href="contact.html">Talk to us!</a></p>
+        </footer>
+        
+        <!-- Link to JavaScript file for additional functionality -->
+        <script src="script.js"></script>
+        <!-- Review Modal -->
+<div id="review-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="close-modal">&times;</span>
+        <div id="review-content"></div>
+    </div>
+</div>
+    </body>
+</html>
