@@ -72,10 +72,10 @@ function validatePasswords() {
   return valid;
 }
 
-function validateSalary() {
-  const display = get("salary-display");
-  const slider = get("salary");
-  display.textContent = `$${parseInt(slider.value).toLocaleString()}`;
+function updatePainDisplay() {
+  const painSlider = get("pain");
+  const painDisplay = get("pain-display");
+  painDisplay.textContent = painSlider.value;
 }
 
 // === Validate All ===
@@ -100,7 +100,7 @@ function validateAll() {
 
 // === Event Bindings ===
 document.addEventListener("DOMContentLoaded", () => {
-  get("salary").addEventListener("input", validateSalary);
+  get("pain").addEventListener("input", updatePainDisplay);
 
   ["fname", "lname", "mname", "email", "phone", "addr1", "addr2", "city", "zip", "uid", "pword", "pword2", "pid"]
     .forEach(id => {
@@ -117,3 +117,4 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!valid) alert("Please correct the errors before submitting.");
   });
 });
+
